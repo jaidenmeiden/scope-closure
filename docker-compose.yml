@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  app:
+    container_name: "${APP_NAME}_app"
+    ports:
+      - ${APP_PORT}:${APP_PORT}
+    build:
+      context: ./
+      dockerfile: docker-compose/node-next/next.dockerfile
+    volumes:
+      - ~/.ssh:/home/.ssh
+      - ./:/usr/src/app
+      - /usr/src/app/node_modules
+      - /usr/src/app/.node-serve-next
