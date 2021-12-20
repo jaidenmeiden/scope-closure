@@ -9,6 +9,7 @@ COPY package*.json ./
 RUN npm install
 RUN npm audit fix
 
+# Activate shell
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 # Port
