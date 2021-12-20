@@ -16,6 +16,15 @@ To restart containers:
 $ make down && make prune && make up
 ```
 
+React app in the Node Docker container:
+
+```bash
+$ docker ps -a
+$ docker exec -itu 1000:1000 frontend_app node -v
+$ docker exec -itu 1000:1000 frontend_app npm -v
+$ docker exec -itu 1000:1000 frontend_app npx create-react-app application/
+```
+
 ## Node
 
 <span style="color: orange"> The docker machine executes all the necessary commands for the project can run in a development environment</span>
