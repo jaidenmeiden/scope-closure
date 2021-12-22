@@ -1,12 +1,18 @@
 version: "3.8"
 
 services:
-  node:
-    container_name: "${APP_NAME}_app"
+  initial:
+    container_name: "${APP_NAME}_initial"
     ports:
       - ${APP_PORT}:${APP_PORT}
-    image: "node:14"
+    build:
+      context: ./
+      dockerfile: docker-compose/node-initial/node.dockerfile
+      args:
+        USER: ${APP_USER}
+        UID: ${APP_UID}
     tty: true
     volumes:
-      - ./:/usr/src/app
+      - ./public/:/usr/src/app
+      - ~/.ssh:/home/${APP_USER}/.ssh
     working_dir: /usr/src/app
