@@ -16,24 +16,22 @@ To restart containers:
 $ make down && make prune && make up
 ```
 
-React app in the Node Docker container:
+## Initial
+
+<span style="color: orange"> The docker machine executes all the necessary commands for create the environment</span>
 
 ```bash
-$ docker ps -a
-$ docker exec -itu 1000:1000 frontend_app node -v
-$ docker exec -itu 1000:1000 frontend_app npm -v
-$ docker exec -itu 1000:1000 frontend_app npx create-react-app application/
-```
-
-## Node
-
-<span style="color: orange"> The docker machine executes all the necessary commands for the project can run in a development environment</span>
-
-```bash
-$ make shell node
+$ make shell initial
 
 $ node -v
 $ npm -v
+
+$ npx create-react-app ['Name project']
+$ cd ['Name project']
+$ npm install
+$ npm audit fix
+$ npm run build
+$ npm run start
 
 # In case you want to exit the shell you just have to type
 $ exit
@@ -107,10 +105,10 @@ $ sudo lsof -i -P -n | grep LISTEN
 
 ```diff
 server {
-  server_name new-frontend.aiudo.dev www.new-frontend.aiudo.dev;
+  server_name jaidenmeiden.com www.jaidenmeiden.com;
 
-  if ($host = www.new-frontend.aiudo.dev) {
-    return 301 https://new-frontend.aiudo.dev$request_uri;
+  if ($host = www.jaidenmeiden.com) {
+    return 301 https://jaidenmeiden.com$request_uri;
   }
 
   location / {
@@ -165,7 +163,7 @@ $ sudo lsof -i -P -n | grep LISTEN
 
 [Development Application](http://localhost:3333)
 
-[Production Application](https://new-frontend.aiudo.dev/)
+[Production Application](https://jaidenmeiden.com/)
 
 ## <font color="red"> Errors</font>
 
