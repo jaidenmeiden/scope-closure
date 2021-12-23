@@ -18,5 +18,7 @@ WORKDIR /usr/src/app
 # Activate shell
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
+USER $USER:$USER
+
 # Port
 EXPOSE 3000
