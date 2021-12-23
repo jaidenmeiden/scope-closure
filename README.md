@@ -16,7 +16,7 @@ To restart containers:
 $ make down && make prune && make up
 ```
 
-## Initial
+## Initial container, inside the machine
 
 <span style="color: orange"> The docker machine executes all the necessary commands for create the environment</span>
 
@@ -26,12 +26,42 @@ $ make shell initial
 $ node -v
 $ npm -v
 
+# If you want create react project into container
 $ npx create-react-app ['Name project']
 $ cd ['Name project']
+
+# If necessary, install Node dependencies
 $ npm install
 $ npm audit fix
+
+# Build our application
 $ npm run build
+# Start our application
 $ npm run start
+
+# In case you want to exit the shell you just have to type
+$ exit
+```
+
+## Initial container, external execution
+
+<span style="color: orange"> The docker machine executes all the necessary external commands for create the environment</span>
+
+```bash
+$ docker exec -itu 1000:1000 jaidenmeiden_initial node -v
+$ docker exec -itu 1000:1000 jaidenmeiden_initial npm -v
+
+# If you want create react project into container
+$ docker exec -itu 1000:1000 jaidenmeiden_initial npx create-react-app ['Name project']
+
+# If necessary, install Node dependencies
+$ docker exec -itu 1000:1000 -w /usr/src/app/['Name project'] jaidenmeiden_initial npm install
+$ docker exec -itu 1000:1000 -w /usr/src/app/['Name project'] jaidenmeiden_initial npm audit fix
+
+# Build our application
+$ docker exec -itu 1000:1000 -w /usr/src/app/['Name project'] jaidenmeiden_initial npm run build
+# Start our application
+$ docker exec -itu 1000:1000 -w /usr/src/app/['Name project'] jaidenmeiden_initial npm run start
 
 # In case you want to exit the shell you just have to type
 $ exit
@@ -161,7 +191,7 @@ $ sudo lsof -i -P -n | grep LISTEN
 
 # Application access
 
-[Development Application](http://localhost:3333)
+[Development Application](http://localhost:3000)
 
 [Production Application](https://jaidenmeiden.com/)
 
