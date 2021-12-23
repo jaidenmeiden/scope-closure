@@ -1,6 +1,6 @@
-# React Application
+# Create any type of javascript application with node
 
-In the root of the project you should find the file `.env.example` which must be renamed like `.env`. From this moment you can work normally with `Laravel`.
+In the root of the project you should find the file `.env.example` which must be renamed like `.env`. From this moment you can work normally with `JavaScript application`.
 
 ## Docker Configuration
 
@@ -16,7 +16,40 @@ To restart containers:
 $ make down && make prune && make up
 ```
 
-## Initial container, inside the machine
+## Initial container to basic Application (inside the machine)
+
+<span style="color: orange"> The docker machine executes all the necessary commands for create the environment</span>
+
+```bash
+$ make shell initial
+
+$ node -v
+$ npm -v
+
+# If you want create new project into container
+$ cd ['Name project']
+$ npm init
+
+# In case you want to exit the shell you just have to type
+$ exit
+```
+
+## Initial container to basic Application (external execution)
+
+<span style="color: orange"> The docker machine executes all the necessary external commands for create the environment</span>
+
+```bash
+$ docker exec -itu 1000:1000 jaidenmeiden_initial node -v
+$ docker exec -itu 1000:1000 jaidenmeiden_initial npm -v
+
+# If you want create new project into container
+$ docker exec -itu 1000:1000 -w /usr/src/app/['Name project'] jaidenmeiden_initial npm init
+
+# In case you want to exit the shell you just have to type
+$ exit
+```
+
+## Initial container with React Application (inside the machine)
 
 <span style="color: orange"> The docker machine executes all the necessary commands for create the environment</span>
 
@@ -43,7 +76,7 @@ $ npm run start
 $ exit
 ```
 
-## Initial container, external execution
+## Initial container with React Application (external execution)
 
 <span style="color: orange"> The docker machine executes all the necessary external commands for create the environment</span>
 
