@@ -67,6 +67,12 @@ $ docker exec -itu 1000:1000 -w /usr/src/app/['Name project'] jaidenmeiden_initi
 $ exit
 ```
 
+## Initial launch
+
+To visualize application you must put `http://localhost:3000/` into browser.
+
+[Application](http://localhost:3000/)
+
 # Optional Node Configuration (Without Docker)
 
 ### <span style="color: orange"> If you want to use node without Docker into the project</span>
