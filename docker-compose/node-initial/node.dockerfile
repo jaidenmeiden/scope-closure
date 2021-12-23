@@ -19,4 +19,4 @@ WORKDIR /usr/src/app
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 # Port
-EXPOSE 3333
+EXPOSE 3000
