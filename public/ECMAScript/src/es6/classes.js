@@ -16,3 +16,6 @@ class calculator  {
 
 const calc = new calculator();
 console.log(calc.sum(14, 7));
+console.log('##########################################################################################################');
+console.log('################################################ Modules #################################################');
+import message from './modules/defaultExport.js'
