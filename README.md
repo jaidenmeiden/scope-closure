@@ -7,6 +7,9 @@ In the root of the project you should find the file `.env.example` which must be
 Generate images and backend containers with the following command:
 
 ```bash
+# If you do not have [make] application
+$ sudo apt install make 
+
 $ make up
 ```
 
@@ -28,7 +31,11 @@ $ npm -v
 
 # If you want create new project into container
 $ cd ['Name project']
+# If required (First time)
 $ npm init
+
+# If you want to execute a javascript file
+$ node ['File name'].js
 
 # In case you want to exit the shell you just have to type
 $ exit
