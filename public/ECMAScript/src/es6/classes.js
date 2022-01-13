@@ -19,3 +19,16 @@ console.log(calc.sum(14, 7));
 console.log('##########################################################################################################');
 console.log('################################################ Modules #################################################');
 import message from './modules/defaultExport.js'
+
+console.log(message())
+
+import { cube, foo, graph } from './modules/export.js'
+
+graph.options = {
+    color:'blue',
+    thickness:'3px'
+};
+
+graph.draw();
+console.log(cube(3)); // 27
+console.log(foo);    // 4.555806215962888
