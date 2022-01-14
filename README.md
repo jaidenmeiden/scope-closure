@@ -36,6 +36,7 @@ $ npm init
 
 # If you want to execute a javascript file
 $ node ['File name'].js
+$ node --experimental-modules ['File name'].js
 
 # In case you want to exit the shell you just have to type
 $ exit

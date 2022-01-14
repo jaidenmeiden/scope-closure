@@ -63,6 +63,6 @@ function* Fibonacci() {
 
 const Initial = Fibonacci();
 
-for (let i = 0; i < 50; i++) {
+for (let i = 0; i < 17; i++) {
     console.log(Initial.next().value);
 }
