@@ -41,3 +41,33 @@ console.log('################################################# commas ##########
 const obj = {
     name: 'Jaiden',
 }
+
+console.log("The comma is not generating error!");
+console.log(obj);
+
+console.log('##########################################################################################################');
+console.log('############################################## Async Await ###############################################');
+
+const execute = () => {
+    return new Promise((resolve, reject) => {
+        (true) ? setTimeout(() => resolve('You have the power!'), 3000) : reject(new Error('Error loading power!'));
+    });
+};
+
+const executeAsync = async () => {
+    const power = await execute();
+    console.log(power);
+}
+
+executeAsync();
+
+const executeOther = async  () => {
+    try {
+        const power = await execute();
+        console.log(power);
+    }  catch (error) {
+        console.log(error);
+    }
+};
+
+executeOther();
