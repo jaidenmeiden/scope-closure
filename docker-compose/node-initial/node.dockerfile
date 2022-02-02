@@ -1,4 +1,4 @@
-FROM node:14.18.2
+FROM node:16.13.2
 
 LABEL version="1.0"
 LABEL description="This is base docker image for the react app"
