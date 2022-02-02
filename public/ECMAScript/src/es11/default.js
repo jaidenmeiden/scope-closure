@@ -11,6 +11,8 @@ console.log(anotherBigNumber);
 
 console.log('##########################################################################################################');
 console.log('########################################## Promise all set ###############################################');
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled
 
 const promise1 = new Promise((resolve, reject) => reject("reject"));
 const promise2 = new Promise((resolve, reject) => resolve("resolve"));
@@ -19,6 +21,16 @@ const promise4 = new Promise((resolve, reject) => setTimeout(() => resolve("reso
 
 Promise.allSettled([promise1, promise2, promise3, promise4])
     .then(response => console.log(response));
+
+const promise5 = Promise.resolve(3);
+const promise6 = 42;
+const promise7 = new Promise((resolve, reject) => {
+    setTimeout(resolve, 100, 'foo');
+});
+
+Promise.all([promise2, promise3, promise4, promise5, promise6, promise7]).then((values) => {
+    console.log(values);
+});
 
 console.log('##########################################################################################################');
 console.log('############################################ GlobalThis ##################################################');
